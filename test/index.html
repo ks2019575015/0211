@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<script src="cordova.js"></script>
+	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css"/>
+	<script src="./js/jquery-1.11.1.min.js"></script>
+	<script src="./js/jquery.mobile-1.4.5.min.js"></script>
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%;}
+  .picture li a {display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%;  height:auto;}
+  .picture li img:hover { display:block; width:100%;  height:auto;} 
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(224, 166, 166); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #262626;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 15px;
+  font-weight: ;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}  
+ iframe{position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(224, 166, 166); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
+</style>
+</head>
+
+<body>
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>CORONA</h1>
+			<!-- Trigger/Open The Modal -->
+<button id="myBtn">Information</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>20200210 LINC+ hybridApp 김진선</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+		</div>
+
+		<div data-role="content" style="text-align:center">
+
+			
+<script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+				<img src="corona1.jpg" width="400">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">코로나 바이러스 감염증</a></li>
+				<li><a href="#movie" data-rel="dialog">예방 수칙</a></li>
+				<li><a href="#news" data-rel="dialog">발생 동향</a></li>
+				<li><a href="#gallery">확진환자 이동 경로</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>corona</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>코로나 바이러스</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<img src="corona2.jpg" width="400">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible">
+					<h3>정의</h3>
+					<p>2019년 12월 발생한 중국 우한 폐렴의 원인 바이러스</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>주요 증상</h3>
+					<p>발열 또는 호흡기 증상(기침, 인후통)</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>위험요인</h3>
+					<p>최근 14일 이내 중국 후베이성 방문</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>주의사항</h3>
+					<p>중국 방문 시 현지 동물(가금류 포함)과의 접촉을 피하고 전통시장 및 불필요한 의료기관 방문자제. 호흡기 증상자와의 접촉을 피하기</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>corona</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="news"  data-theme="a">
+		<div data-role="header" data-position="fixed"  data-theme="a">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>정보 알림</h1>
+		</div>
+		
+         <iframe src="http://ncov.mohw.go.kr/tcmBoardList.do?brdId=3"></iframe>
+		
+			
+	</div>
+
+
+	
+	<div data-role="page" id="movie">
+		<div data-role="header">
+			<h1>예방방법</h1>
+		</div>
+		<div data-role="content">
+			<h2></h2>
+			<img src="예방수칙.png" alt="Girl in a jacket" width="450" height="700">
+			<!--<img src="3-1.jpg" alt="" width="100%">-->
+		</div>
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#news2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="news2">
+		<div data-role="header">
+			<h1>올바른 마스크 착용 방법</h1>
+		</div>
+		<div data-role="content">
+			<img src="마스크.jpg" alt="Girl in a jacket" width="420" height="700">
+		<div data-role="footer">
+			<a href="#movie"  data-direction="reverse">이전</a>
+			<a href="#home">처음</a>
+		</div>
+	</div>
+</div>
+
+	<div data-role="page" id="gallery"  data-theme="a">
+		<div data-role="header" data-position="fixed"  data-theme="a">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>확진환자 이동 경로</h1>
+		</div>
+		<div data-role="content">
+         <iframe src="http://ncov.mohw.go.kr/bdBoardList.do?brdId=1&brdGubun=12&dataGubun=&ncvContSeq=&contSeq=&board_id=&gubun="></iframe>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<h1>corona</h1>
+		</div>		
+	</div>
+</div>	
+</body>
+</html>
